@@ -41,5 +41,16 @@ class Quarterback(Player):
         score = self.completed_passes - (2 * self.interceptions)
         return score
 
+class Safety(Player):
+    ''' Override certain parameters of the default Player class and add some
+    functionality unique to safeties
+    '''
+    def __init__(self, name=None, yards=100, touchdowns=1, interceptions=8,
+                 tackles=10, sacks=3):
+        super().__init__(name=name, yards=yards, touchdowns=touchdowns,
+                         interceptions=interceptions)
+        self.tackles = tackles
+        self.sacks = sacks
+
 # TODO - refine the default player stats and/or make a defensive player default
 # with number of tackles, sacks, interceptions etc.
